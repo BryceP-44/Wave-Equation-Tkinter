@@ -1,4 +1,3 @@
-
 from turtle import *
 
 #f=k*d
@@ -10,13 +9,9 @@ m=10
 dt=.1
 
 
-
 while True:
     f=-k*d
     a=f/m
     v+=a*dt
     d+=v*dt
-    goto(10,d)
-    
-    
-
+    goto(0,d)
