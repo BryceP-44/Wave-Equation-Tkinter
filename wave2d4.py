@@ -17,7 +17,8 @@ b=100
 x=linspace(a,b,n)
 y=[]
 for i in range(len(x)):
-    y.append(50*sin(pi/10*x[i]))
+    #y.append(50*sin(pi/10*x[i]))
+    y.append(0)
 
 vy=[]
 for i in range(len(x)):
@@ -29,7 +30,7 @@ AL=0 #get arclength
 
 k=1
 m=10
-dt=.1
+dt=.3
 
 
 j=0
@@ -39,11 +40,14 @@ while True:
         graph.create_line(x[i]+100,y[i]+250,x[i+1]+100,y[i+1]+250,fill="blue",width=2)
         
     for i in range(1,len(x)-1): #update y positions
-        y[0]=50+70*sin(pi/200*j)
+        if j<200:
+            y[0]=0+70*sin(pi/200*j)
+        #y[len(x)-1]=0-70*sin(pi/200*j)
+        #y[len(x)-1]=y[len(x)-2]
         d1=y[i]-y[i-1]
         d2=y[i]-y[i+1]
         F=-k*(d1+d2)
-        fF=.5*vy[i]
+        fF=.3*vy[i]
         F=F-fF
         a=F/m
         

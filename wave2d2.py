@@ -47,8 +47,8 @@ while True:
     #print(vy[50])
     
     root.update()
-    if j%2:
-        graph.delete('all')
+    #if j%1==0:
+    graph.delete('all')
 
       
 
