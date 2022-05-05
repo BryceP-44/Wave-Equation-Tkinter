@@ -1,42 +1,73 @@
-import time
 from tkinter import *
 from linspace import *
 from math import *
 
 root=Tk()
-root.title("wave eq")
+root.title("wave equation")
 root.geometry("500x500")
 graph=Canvas(root,width=300,height=200,bg="green")
 graph.pack(fill="both",expand=True)
 
+
 #f=k*d
-n=100000
-x=linspace(0,1000,n)
+
+n=100
+a=0
+b=100
+x=linspace(a,b,n)
+
 y=[]
 for i in range(len(x)):
-    y.append(sin(pi/10*x[i]))
+    y.append(50*sin(pi/10*x[i]))
+
+vy=[]
+for i in range(len(x)):
+    vy.append(0)
 
 
-
-k=.1
+k=1
 m=10
-dt=.1
-x=0
+dt=.3
 
-
-
+j=0
 while True:
-    for i in range(1,len(x-1)):
-        d1=y[i]-y[i-1]
-        d2=y[i+1]-y[i]
-        fy=k*(d1+d2)
-        a=
-    
-    
-    
-    graph.create_line(x-dt,dog+250,x,d+250,fill="blue",width=5)
-    root.update()
+    j+=1
+    for i in range(len(x)-1):
+        graph.create_line(x[i]+100,y[i]+250,x[i+1]+100,y[i+1]+250,fill="blue",width=2)
 
-      
-    
+    for i in range(1,len(x)-1):
+            
+        d1=y[i]-y[i-1]
+        d2=y[i]-y[i+1]
+        F=-k*(d1+d2)
+        fF=.5*vy[i]
+        F=F-fF
+        a=F/m
+        vy[i]+=a*dt
+        y[i]+=vy[i]*dt
+
+    root.update()
+    graph.delete("all")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

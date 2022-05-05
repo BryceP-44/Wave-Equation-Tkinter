@@ -29,7 +29,8 @@ AL=0 #get arclength
 
 k=1
 m=10
-dt=.1
+dt=.25
+
 
 
 j=0
@@ -39,11 +40,11 @@ while True:
         graph.create_line(x[i]+100,y[i]+250,x[i+1]+100,y[i+1]+250,fill="blue",width=2)
         
     for i in range(1,len(x)-1): #update y positions
-        #y[0]=sin(
+        y[0]=100+70*sin(pi/200*j)
         d1=y[i]-y[i-1]
         d2=y[i]-y[i+1]
         F=-k*(d1+d2)
-        fF=.5*vy[i]
+        fF=.31*vy[i]
         F=F-fF
         a=F/m
         
