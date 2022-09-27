@@ -1,5 +1,5 @@
 # Wave-Equation-Tkinter
-You can demo any of these uploaded files as they are
+You can demo any of these uploaded files as they are.
 From a bouncing point mass to a driven vibrating string. Uses the built in python GUI toolkit for graphics.
 I recently made a custom 3D graphics formula, so I will be making a 2D wave sheet and a 3D vibrating block soon. 
 
